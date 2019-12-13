@@ -149,15 +149,19 @@ int main()
     testcase.appendNode("Ryan");
     testcase.appendNode("Jon");
     testcase.appendNode("Sam");
-    // testcase.printList();
-    Node *found = testcase.getNode(2);
+    testcase.printList();
+
+    cout << "\n";
+
+    int index = 2;
+    Node *found = testcase.getNode(index);
     if (found != nullptr)
     {
-        cout << found->value << endl;
+        cout << "Node at index " << index << ": " << found->value << endl;
     }
     else
     {
-        cout << "Index does not exist" << endl;
+        cout << "Index '" << index << "' does not exist" << endl;
     }
     return 0;
 }
