@@ -1,7 +1,7 @@
 # practice_interview_questions
 A repository containing my solutions to practice interview questions
 
-In the Cracking the Code Interview  and LeetCode folder, I have included my solutions to interview questions contained within the given section. 
+In the Cracking the Code Interview and LeetCode folder, I have included my solutions to interview questions contained within the given section. 
 
 The other folders contain problems tried during the respective month and year. In each of these folders,
 there will be a solved folder containing problems I have a solution to. These may or may not be the optimal solutions,
