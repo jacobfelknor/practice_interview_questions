@@ -21,6 +21,19 @@ def check_power_three(n: int) -> int:
     return n == 0, n, powers
 
 
+def is_power_three(n: int) -> int:
+    ii = 0
+    while True:
+        if 3**ii > n:
+            return False
+        if 3**ii == n:
+            return True
+        ii += 1
+
 
 n = 3**0 + 3**6 + 3**12 + 3**16 + 3**2 + 3**3 + 3**9 + 3**1
 print(check_power_three(n))
+
+
+assert is_power_three(3**4)
+assert not is_power_three(21)
