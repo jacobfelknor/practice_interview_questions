@@ -25,7 +25,7 @@ from typing import List
 def canJumpRecursive(nums: List[int]) -> bool:
     # Base cases
     # 1. we made it to end!
-    if len(nums) < 1:
+    if len(nums) <= 1:
         return True
     # 2. we made it to position where we can't jump any more :(
     if nums[0] == 0:
@@ -55,7 +55,7 @@ class CanJump:
     def canJump(self, nums: List[int], n: int = 0) -> bool:
         # Base cases
         # 1. we made it to end!
-        if len(nums) < 1:
+        if len(nums) <= 1:
             return True
         # 2. we made it to position where we can't jump any more :(
         if nums[0] == 0:
@@ -98,3 +98,25 @@ print(f"DP:        {ans}, took {t1-t0} nanos")
 
 # print(f"Recursive: {canJumpRecursive(nums)}")
 # print(f"DP: {canJump(nums)}")
+
+
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        size = len(nums)
+        dp = [0] * size
+
+        if len(nums) < 2:
+            return True
+
+        # base case
+        dp[0] = nums[0]
+
+        for i in range(1, size):
+            # on every step check if current index is reachable
+            if dp[i - 1] == 0:
+                return False
+
+            # set current dp element as a max of jump number from current index or the one computed before minus 1 step in the dp array
+            dp[i] = max(dp[i - 1] - 1, nums[i])
+
+        return True
